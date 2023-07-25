@@ -31,82 +31,15 @@
   </header>
 
   <main>
-    <section id="home">
-      <div class="container">
-        <h1>Welcome to Programming Market</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tincidunt mauris in laoreet.</p>
-        <a href="#about" class="btn">Learn More</a>
-        <img src="https://source.unsplash.com/800x400/?programming" alt="Programming" class="hero-image">
-      </div>
-    </section>
+    <!-- الأقسام الأخرى هنا ... -->
 
-    <section id="about">
-      <div class="container">
-        <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tincidunt mauris in laoreet.</p>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <h2>Our Services</h2>
-        <ul>
-          <li>Web Development</li>
-          <li>Mobile App Development</li>
-          <li>Software Development</li>
-          <li>UI/UX Design</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="articles">
-      <div class="container">
-        <h2>Articles</h2>
-        <div class="articles-grid">
-          <div class="article">
-            <img src="https://source.unsplash.com/400x300/?programming" alt="Programming Article">
-            <h3>Introduction to Programming</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tincidunt mauris in laoreet.</p>
-          </div>
-          <div class="article">
-            <img src="https://source.unsplash.com/400x300/?marketing" alt="Marketing Article">
-            <h3>Marketing Strategies</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tincidunt mauris in laoreet.</p>
-          </div>
-          <div class="article">
-            <img src="https://source.unsplash.com/400x300/?design" alt="Design Article">
-            <h3>The Art of Design</h3>
-            <p>Design is the bridge between creativity and functionality. In this article, we explore the principles of design and its impact on user experience.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="videos">
-      <div class="container">
-        <h2>Educational Videos</h2>
-        <div class="video-grid">
-          <div class="video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <h3>Introduction to Web Development</h3>
-            <p>Learn the basics of web development with this comprehensive video tutorial.</p>
-          </div>
-          <div class="video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <h3>Mobile App Development for Beginners</h3>
-            <p>Start your journey into mobile app development with this beginner-friendly video guide.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacts">
+    <section id="contact">
       <div class="container">
         <h2>Contact Us</h2>
         <form id="contactForm">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <textarea placeholder="Your Message" required></textarea>
+          <input type="text" placeholder="Your Name" id="nameInput" required>
+          <input type="email" placeholder="Your Email" id="emailInput" required>
+          <textarea placeholder="Your Message" id="messageInput" required></textarea>
           <button type="submit">Send Message</button>
         </form>
       </div>
@@ -120,12 +53,12 @@
   </footer>
 
   <!-- الأيقونات الرسومية لوسائل التواصل الاجتماعي -->
-  <a href="https://www.facebook.com/YourFacebookPage" class="social-icon" target="_blank"><i class="fab fa-facebook" style="color: #007BFF;"></i></a>
-  <a href="https://www.instagram.com/YourInstagramPage" class="social-icon" target="_blank"><i class="fab fa-instagram" style="color: #007BFF;"></i></a>
-  <a href="https://t.me/YourTelegramChannel" class="social-icon" target="_blank"><i class="fab fa-telegram" style="color: #007BFF;"></i></a>
+  <a href="https://www.facebook.com/YourFacebookPage" class="social-icon" target="_blank"><i class="fab fa-facebook" style="color: #206DCD;"></i></a>
+  <a href="https://www.instagram.com/YourInstagramPage" class="social-icon" target="_blank"><i class="fab fa-instagram" style="color: #206DCD;"></i></a>
+  <a href="https://t.me/YourTelegramChannel" class="social-icon" target="_blank"><i class="fab fa-telegram" style="color: #206DCD;"></i></a>
   <!-- الأيقونات الرسومية من مكتبة Ionicons -->
-  <a href="https://twitter.com/YourTwitterPage" class="social-icon" target="_blank"><ion-icon name="logo-twitter" style="color: #007BFF;"></ion-icon></a>
-  <a href="https://www.linkedin.com/YourLinkedInPage" class="social-icon" target="_blank"><ion-icon name="logo-linkedin" style="color: #007BFF;"></ion-icon></a>
+  <a href="https://twitter.com/YourTwitterPage" class="social-icon" target="_blank"><ion-icon name="logo-twitter" style="color: #206DCD;"></ion-icon></a>
+  <a href="https://www.linkedin.com/YourLinkedInPage" class="social-icon" target="_blank"><ion-icon name="logo-linkedin" style="color: #206DCD;"></ion-icon></a>
 
   <!-- ربط مكتبات Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
@@ -135,14 +68,12 @@
   <script>
     // تكوين اتصال بقاعدة البيانات Firestore من Firebase
     const firebaseConfig = {
-      apiKey: "AIzaSyAhagury_J1zBQbq-6veNtwrjHdF04hjKY",
-  authDomain: "people-f0d3d.firebaseapp.com",
-  databaseURL: "https://people-f0d3d-default-rtdb.firebaseio.com",
-  projectId: "people-f0d3d",
-  storageBucket: "people-f0d3d.appspot.com",
-  messagingSenderId: "1065444192804",
-  appId: "1:1065444192804:web:d9534ede26eba763b21eb1",
-  measurementId: "G-QMKE2NKDY2"
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
     };
 
     // تهيئة تطبيق Firebase
@@ -151,9 +82,9 @@
     // اضف هنا معرف النموذج والحقول الذي تم إنشاؤها في قاعدة البيانات
     const db = firebase.firestore();
     const contactForm = document.getElementById('contactForm');
-    const nameInput = document.querySelector('#contactForm input[type="text"]');
-    const emailInput = document.querySelector('#contactForm input[type="email"]');
-    const messageInput = document.querySelector('#contactForm textarea');
+    const nameInput = document.getElementById('nameInput');
+    const emailInput = document.getElementById('emailInput');
+    const messageInput = document.getElementById('messageInput');
 
     // استدعاء دالة عند تقديم النموذج
     contactForm.addEventListener('submit', (e) => {
@@ -173,8 +104,7 @@
         alert('An error occurred while sending the message. Please try again later.');
       });
     });
-  </script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  </script>
   <script src="script.js"></script>
 </body>
 
