@@ -100,7 +100,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contacts">
       <div class="container">
         <h2>Contact Us</h2>
         <form id="contactForm">
@@ -119,6 +119,62 @@
     </div>
   </footer>
 
+  <!-- الأيقونات الرسومية لوسائل التواصل الاجتماعي -->
+  <a href="https://www.facebook.com/YourFacebookPage" class="social-icon" target="_blank"><i class="fab fa-facebook" style="color: #007BFF;"></i></a>
+  <a href="https://www.instagram.com/YourInstagramPage" class="social-icon" target="_blank"><i class="fab fa-instagram" style="color: #007BFF;"></i></a>
+  <a href="https://t.me/YourTelegramChannel" class="social-icon" target="_blank"><i class="fab fa-telegram" style="color: #007BFF;"></i></a>
+  <!-- الأيقونات الرسومية من مكتبة Ionicons -->
+  <a href="https://twitter.com/YourTwitterPage" class="social-icon" target="_blank"><ion-icon name="logo-twitter" style="color: #007BFF;"></ion-icon></a>
+  <a href="https://www.linkedin.com/YourLinkedInPage" class="social-icon" target="_blank"><ion-icon name="logo-linkedin" style="color: #007BFF;"></ion-icon></a>
+
+  <!-- ربط مكتبات Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"></script>
+
+  <script>
+    // تكوين اتصال بقاعدة البيانات Firestore من Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyAhagury_J1zBQbq-6veNtwrjHdF04hjKY",
+  authDomain: "people-f0d3d.firebaseapp.com",
+  databaseURL: "https://people-f0d3d-default-rtdb.firebaseio.com",
+  projectId: "people-f0d3d",
+  storageBucket: "people-f0d3d.appspot.com",
+  messagingSenderId: "1065444192804",
+  appId: "1:1065444192804:web:d9534ede26eba763b21eb1",
+  measurementId: "G-QMKE2NKDY2"
+    };
+
+    // تهيئة تطبيق Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // اضف هنا معرف النموذج والحقول الذي تم إنشاؤها في قاعدة البيانات
+    const db = firebase.firestore();
+    const contactForm = document.getElementById('contactForm');
+    const nameInput = document.querySelector('#contactForm input[type="text"]');
+    const emailInput = document.querySelector('#contactForm input[type="email"]');
+    const messageInput = document.querySelector('#contactForm textarea');
+
+    // استدعاء دالة عند تقديم النموذج
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // احفظ البيانات في قاعدة البيانات
+      db.collection('contacts').add({
+        name: nameInput.value,
+        email: emailInput.value,
+        message: messageInput.value
+      }).then(() => {
+        // بعد حفظ البيانات بنجاح، قم بإعادة تعيين النموذج
+        contactForm.reset();
+        alert('Your message has been sent successfully!');
+      }).catch((error) => {
+        console.error('Error writing document: ', error);
+        alert('An error occurred while sending the message. Please try again later.');
+      });
+    });
+  </script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
   <script src="script.js"></script>
 </body>
 
